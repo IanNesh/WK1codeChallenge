@@ -1,12 +1,12 @@
-//Calculate net salary taking into account nhif, nssf amd other deductions
+//Challenge that calculates net salary taking into account nhif, nssf add other deductions
 function calculateNetPay(){
     const prompt = require("prompt-sync")()
-    let basicSalary = prompt("Enter Basic Pay: "); //Value initialized by the user
-    let benefits = prompt("Enter benefits amount:") //values initialized by the user
-    let grossSalary = basicSalary + benefits; //gross salary is the sum of basic salary and any benefits given
+    let basicSalary = prompt("Enter Basic Pay: "); 
+    let benefits = prompt("Enter benefits amount:") 
+    let grossSalary = basicSalary + benefits; 
         
     
-        //PAYE CALCULATIONS
+    //PAYE CALCULATIONS
         let paye = 0;
     if (grossSalary <= 24000) {
         paye = (24000 * 0.1);
@@ -66,7 +66,7 @@ function calculateNetPay(){
         nssf = (18000 * 0.06);
     } else if(grossSalary <= 0){
         console.log("Invalid input. Salary must be greater than 0.");
-    } // used the rates provided by NSSF website
+    } 
     
     let netDeductions = nhif + nssf + paye;
     let netSalary = (grossSalary - netDeductions)
